@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using Android.Content;
 
 namespace MeetupDemo.Droid
 {
@@ -18,27 +19,27 @@ namespace MeetupDemo.Droid
 			// Set our view from the "main" layout resource
 			SetContentView(Resource.Layout.Main);
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button = FindViewById<Button>(Resource.Id.myButton);
-
-			var searchView = this.FindViewById<SearchView>(Resource.Id.searchView1);
-			searchView.SearchClick += (s, e) => {
-				System.Diagnostics.Debug.WriteLine(searchView.Query);
-			};
+			var list = this.FindViewById<ListView>(Resource.Id.visitList);
+			var button = FindViewById<Button>(Resource.Id.myButton);
+			var searchView = this.FindViewById<SearchView>(Resource.Id.search);
 
 			button.Click += delegate {
 				var pesel = searchView.Query;
 				if (logic.IsPeselValid(pesel))
 				{
 					var visits = logic.GetVisitsForPesel(pesel);
-					foreach (var visit in visits)
-					{
-						System.Diagnostics.Debug.WriteLine($"visit: {visit.Title}");
-					}
+					list.Adapter = new VisitListAdapter(this, visits.ToArray());
 				} else {
-					System.Diagnostics.Debug.WriteLine("Pesel is wrong!");
+					list.Adapter = new VisitListAdapter(this, new Visit[] { });
 				}
+			};
+
+			list.ItemClick += (sender, e) =>
+			{
+				var intent = new Intent(this, typeof(VisitDetailsActivity));
+				var visit = ((VisitListAdapter)list.Adapter).Visits[e.Position];
+				intent.PutExtra("visitId", visit.Id);
+				this.StartActivity(intent);
 			};
 		}
 	}
