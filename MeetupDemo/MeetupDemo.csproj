@@ -32,6 +32,7 @@
     <Compile Include="Logic.cs" />
     <Compile Include="Domain\Visit.cs" />
     <Compile Include="Domain\ResourceBase.cs" />
+    <Compile Include="Domain\Person.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\" />

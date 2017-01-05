@@ -6,8 +6,17 @@ namespace MeetupDemo
 {
 	public class Logic
 	{
-		private static readonly int[] libras = { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
-		private static List<Visit> visits = CreateVisitList();
+		private static List<Visit> visits;
+		private List<Visit> Visits
+		{
+			get
+			{
+				if (visits == null)
+					visits = new List<Visit>();
+
+				return visits;
+			}
+		}
 
 		public Logic()
 		{
@@ -27,28 +36,35 @@ namespace MeetupDemo
 
 			for (int i = 0; i < 10; i++)
 			{
-				checkSum += libras[i] * int.Parse(id[i].ToString());
+				var weight = ((2 * ((i % 4) + 1)) - 1) + (i % 4) - (i % 2);
+				checkSum += weight * int.Parse(id[i].ToString());
 			}
 
-			return checkSum % 10 == int.Parse(id[10].ToString());
+			if (checkSum % 10 == 0)
+				return int.Parse(id[10].ToString()) == 0;
+
+			return (10 - (checkSum % 10)) == int.Parse(id[10].ToString());
 		}
 
-		public List<Visit> GetVisitsForPesel(string id)
+		public List<Visit> GetVisitsForPesel(string pesel)
 		{
+			visits = new List<Visit>
+			{
+				new Visit { Id = 0, Pesel = pesel, Title = "Visit 0" },
+				new Visit { Id = 1, Pesel = pesel, Title = "Visit 1" },
+				new Visit { Id = 2, Pesel = pesel, Title = "Visit 2" },
+				new Visit { Id = 3, Pesel = pesel, Title = "Visit 3" },
+				new Visit { Id = 5, Pesel = pesel, Title = "Visit 5" },
+				new Visit { Id = 6, Pesel = pesel, Title = "Visit 6" },
+				new Visit { Id = 7, Pesel = pesel, Title = "Visit 7" }
+			};
+
 			return visits;
 		}
 
 		public Visit GetVisitById(int visitId)
 		{
 			return visits.First(v => v.Id == visitId);
-		}
-
-		private static List<Visit> CreateVisitList()
-		{
-			return new List<Visit>
-			{
-				new Visit { Id = 0, Pesel = "1234567890", Title = "Visit 1" }
-			};
 		}
 	}
 }
