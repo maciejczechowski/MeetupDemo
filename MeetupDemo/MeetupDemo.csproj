@@ -33,6 +33,7 @@
     <Compile Include="Domain\Visit.cs" />
     <Compile Include="Domain\ResourceBase.cs" />
     <Compile Include="Domain\Person.cs" />
+    <Compile Include="PeselVerificationResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\" />

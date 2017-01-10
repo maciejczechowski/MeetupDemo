@@ -22,15 +22,15 @@ namespace MeetupDemo
 		{
 		}
 
-		public bool IsPeselValid(string id)
+		public PeselVerificationResult IsPeselValid(string id)
 		{
 			if (id?.Length != 11)
-				return false;
+				return PeselVerificationResult.WrongLength;
 
 			long aNumber;
 
 			if (!long.TryParse(id, out aNumber))
-				return false;
+				return PeselVerificationResult.Invalid;
 
 			int checkSum = 0;
 
@@ -41,9 +41,9 @@ namespace MeetupDemo
 			}
 
 			if (checkSum % 10 == 0)
-				return int.Parse(id[10].ToString()) == 0;
+				return int.Parse(id[10].ToString()) == 0 ? PeselVerificationResult.Valid : PeselVerificationResult.Invalid;
 
-			return (10 - (checkSum % 10)) == int.Parse(id[10].ToString());
+			return (10 - (checkSum % 10)) == int.Parse(id[10].ToString()) ? PeselVerificationResult.Valid : PeselVerificationResult.Invalid;
 		}
 
 		public List<Visit> GetVisitsForPesel(string pesel)

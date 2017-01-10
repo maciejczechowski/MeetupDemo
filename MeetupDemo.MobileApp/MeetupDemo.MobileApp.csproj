@@ -32,6 +32,7 @@
     <Compile Include="ViewModels\SearchCitizenViewModel.cs" />
     <Compile Include="ViewModels\VisitListViewModel.cs" />
     <Compile Include="MeetupDemoMobileApp.cs" />
+    <Compile Include="Converters\InlineConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">
@@ -73,6 +74,9 @@
       <Project>{C70E626C-DDB5-41FB-81A6-C39C3F737A4F}</Project>
       <Name>MeetupDemo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converters\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
