@@ -22,7 +22,7 @@
         android:id="@+id/error"
         android:layout_gravity="center"
         android:gravity="center" />
-    <MvxListView
+    <ListView
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"

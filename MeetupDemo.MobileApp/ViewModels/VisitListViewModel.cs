@@ -1,12 +1,10 @@
 ﻿using System;
-using MvvmCross.Core.ViewModels;
+using MeetupDemo.MobileApp.ViewModels;
 
 namespace MeetupDemo.MobileApp
 {
-	public class VisitListViewModel : MvxViewModel
+    public class VisitListViewModel : ViewModelBase
 	{
-		public VisitListViewModel()
-		{
-		}
+		
 	}
 }

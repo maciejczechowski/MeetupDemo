@@ -21,6 +21,12 @@ namespace MeetupDemo.iOS
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
 
+            Window = new UIWindow (UIScreen.MainScreen.Bounds);
+
+            Window.MakeKeyAndVisible ();
+
+            TransitionToViewController (new SearchCitizenViewController ());
+
 			return true;
 		}
 
@@ -54,6 +60,12 @@ namespace MeetupDemo.iOS
 		{
 			// Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
 		}
+
+        private void TransitionToViewController (UIViewController viewController)
+        {
+            UIView.Transition (Window, 0.35, UIViewAnimationOptions.TransitionCrossDissolve, () =>
+                 Window.RootViewController = viewController, null);
+        }
 	}
 }
 

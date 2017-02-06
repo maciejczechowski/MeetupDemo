@@ -10,12 +10,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using MvvmCross.Droid.Views;
+using ReactiveUI;
 
 namespace MeetupDemo.Droid
 {
 	[Activity(Label = "VisitDetailsActivity")]
-	public class VisitDetailsActivity : MvxActivity
+    public class VisitDetailsActivity : ReactiveActivity
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
 		{

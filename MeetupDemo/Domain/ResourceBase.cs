@@ -1,8 +1,14 @@
 ﻿using System;
+using ReactiveUI;
+
 namespace MeetupDemo
 {
-	public abstract class ResourceBase
+	public abstract class ResourceBase : ReactiveObject
 	{
-		public int Id { get; set; }
+        private int id;
+		public int Id {
+            get { return this.id; }
+            set { this.RaiseAndSetIfChanged (ref this.id, value); }
+        }
 	}
 }

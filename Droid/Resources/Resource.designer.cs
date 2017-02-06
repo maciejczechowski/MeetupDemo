@@ -26,53 +26,11 @@ namespace MeetupDemo.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxBind = global::MeetupDemo.Droid.Resource.Attribute.MvxBind;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxDropDownItemTemplate = global::MeetupDemo.Droid.Resource.Attribute.MvxDropDownItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxGroupItemTemplate = global::MeetupDemo.Droid.Resource.Attribute.MvxGroupItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxItemTemplate = global::MeetupDemo.Droid.Resource.Attribute.MvxItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxLang = global::MeetupDemo.Droid.Resource.Attribute.MvxLang;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxSource = global::MeetupDemo.Droid.Resource.Attribute.MvxSource;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxTemplate = global::MeetupDemo.Droid.Resource.Attribute.MvxTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Id.MvvmCrossTagId = global::MeetupDemo.Droid.Resource.Id.MvvmCrossTagId;
-			global::MvvmCross.Binding.Droid.Resource.Id.MvxBindingTagUnique = global::MeetupDemo.Droid.Resource.Id.MvxBindingTagUnique;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding = global::MeetupDemo.Droid.Resource.Styleable.MvxBinding;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxBind = global::MeetupDemo.Droid.Resource.Styleable.MvxBinding_MvxBind;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxLang = global::MeetupDemo.Droid.Resource.Styleable.MvxBinding_MvxLang;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxControl = global::MeetupDemo.Droid.Resource.Styleable.MvxControl;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxControl_MvxTemplate = global::MeetupDemo.Droid.Resource.Styleable.MvxControl_MvxTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView = global::MeetupDemo.Droid.Resource.Styleable.MvxExpandableListView;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::MeetupDemo.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView = global::MeetupDemo.Droid.Resource.Styleable.MvxImageView;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView_MvxSource = global::MeetupDemo.Droid.Resource.Styleable.MvxImageView_MvxSource;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::MeetupDemo.Droid.Resource.Styleable.MvxListView;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::MeetupDemo.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::MeetupDemo.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
 			global::Splat.Resource.String.library_name = global::MeetupDemo.Droid.Resource.String.library_name;
 		}
 		
 		public partial class Attribute
 		{
-			
-			// aapt resource value: 0x7f010000
-			public const int MvxBind = 2130771968;
-			
-			// aapt resource value: 0x7f010004
-			public const int MvxDropDownItemTemplate = 2130771972;
-			
-			// aapt resource value: 0x7f010005
-			public const int MvxGroupItemTemplate = 2130771973;
-			
-			// aapt resource value: 0x7f010003
-			public const int MvxItemTemplate = 2130771971;
-			
-			// aapt resource value: 0x7f010001
-			public const int MvxLang = 2130771969;
-			
-			// aapt resource value: 0x7f010006
-			public const int MvxSource = 2130771974;
-			
-			// aapt resource value: 0x7f010002
-			public const int MvxTemplate = 2130771970;
 			
 			static Attribute()
 			{
@@ -103,47 +61,41 @@ namespace MeetupDemo.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int MvvmCrossTagId = 2131099648;
-			
-			// aapt resource value: 0x7f060001
-			public const int MvxBindingTagUnique = 2131099649;
-			
-			// aapt resource value: 0x7f06000d
-			public const int end = 2131099661;
-			
-			// aapt resource value: 0x7f060005
-			public const int error = 2131099653;
-			
-			// aapt resource value: 0x7f06000a
-			public const int linearLayout1 = 2131099658;
+			// aapt resource value: 0x7f06000b
+			public const int end = 2131099659;
 			
 			// aapt resource value: 0x7f060003
-			public const int myButton = 2131099651;
-			
-			// aapt resource value: 0x7f060002
-			public const int search = 2131099650;
-			
-			// aapt resource value: 0x7f060009
-			public const int space1 = 2131099657;
-			
-			// aapt resource value: 0x7f06000c
-			public const int start = 2131099660;
-			
-			// aapt resource value: 0x7f060006
-			public const int textView1 = 2131099654;
-			
-			// aapt resource value: 0x7f060007
-			public const int textView2 = 2131099655;
+			public const int error = 2131099651;
 			
 			// aapt resource value: 0x7f060008
-			public const int textView3 = 2131099656;
+			public const int linearLayout1 = 2131099656;
 			
-			// aapt resource value: 0x7f06000b
-			public const int title = 2131099659;
+			// aapt resource value: 0x7f060001
+			public const int myButton = 2131099649;
+			
+			// aapt resource value: 0x7f060000
+			public const int search = 2131099648;
+			
+			// aapt resource value: 0x7f060007
+			public const int space1 = 2131099655;
+			
+			// aapt resource value: 0x7f06000a
+			public const int start = 2131099658;
 			
 			// aapt resource value: 0x7f060004
-			public const int visitList = 2131099652;
+			public const int textView1 = 2131099652;
+			
+			// aapt resource value: 0x7f060005
+			public const int textView2 = 2131099653;
+			
+			// aapt resource value: 0x7f060006
+			public const int textView3 = 2131099654;
+			
+			// aapt resource value: 0x7f060009
+			public const int title = 2131099657;
+			
+			// aapt resource value: 0x7f060002
+			public const int visitList = 2131099650;
 			
 			static Id()
 			{
@@ -217,62 +169,6 @@ namespace MeetupDemo.Droid
 			}
 			
 			private String()
-			{
-			}
-		}
-		
-		public partial class Styleable
-		{
-			
-			public static int[] MvxBinding = new int[]
-			{
-					2130771968,
-					2130771969};
-			
-			// aapt resource value: 0
-			public const int MvxBinding_MvxBind = 0;
-			
-			// aapt resource value: 1
-			public const int MvxBinding_MvxLang = 1;
-			
-			public static int[] MvxControl = new int[]
-			{
-					2130771970};
-			
-			// aapt resource value: 0
-			public const int MvxControl_MvxTemplate = 0;
-			
-			public static int[] MvxExpandableListView = new int[]
-			{
-					2130771973};
-			
-			// aapt resource value: 0
-			public const int MvxExpandableListView_MvxGroupItemTemplate = 0;
-			
-			public static int[] MvxImageView = new int[]
-			{
-					2130771974};
-			
-			// aapt resource value: 0
-			public const int MvxImageView_MvxSource = 0;
-			
-			public static int[] MvxListView = new int[]
-			{
-					2130771971,
-					2130771972};
-			
-			// aapt resource value: 1
-			public const int MvxListView_MvxDropDownItemTemplate = 1;
-			
-			// aapt resource value: 0
-			public const int MvxListView_MvxItemTemplate = 0;
-			
-			static Styleable()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Styleable()
 			{
 			}
 		}
