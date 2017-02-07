@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using MeetupDemo.MobileApp.ViewModels;
 using ReactiveUI;
+using System.Runtime.Serialization;
 
 namespace MeetupDemo.MobileApp
 {
+    [DataContract]
     public class SearchCitizenViewModel : ViewModelBase
 	{
 		private Logic logic;
@@ -13,6 +15,7 @@ namespace MeetupDemo.MobileApp
 		private IDisposable peselSubscription;
 
         private ReactiveList<Visit> searchResult = new ReactiveList<Visit>();
+        [IgnoreDataMember]
 		public ReactiveList<Visit> SearchResult
 		{
 			get { return this.searchResult; }
@@ -20,6 +23,7 @@ namespace MeetupDemo.MobileApp
 		}
 
 		private string pesel;
+        [DataMember]
 		public string Pesel
 		{
 			get { return this.pesel; }
@@ -27,12 +31,14 @@ namespace MeetupDemo.MobileApp
 		}
 
 		private string error;
+        [IgnoreDataMember]
 		public string Error
 		{
 			get { return this.error; }
             set { this.RaiseAndSetIfChanged(ref this.error, value); }
 		}
 
+        // not necessary
         public override string UrlPathSegment => "SearchCitizen";
 
 		public ReactiveCommand PerformSearch { get; set; }
@@ -53,7 +59,7 @@ namespace MeetupDemo.MobileApp
                     this.searchResult.Clear ();  
                     this.Error = "Pesel is to shor or too long. Should be 11 digits long. No less, no more.";
                 } else {
-                    this.searchResult.Clear();// = this.emptyList;
+                    this.searchResult.Clear();
 					this.Error = "Pesel is not a valid pesel.";
 				}
 			});

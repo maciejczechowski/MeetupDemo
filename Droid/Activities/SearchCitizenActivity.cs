@@ -9,6 +9,7 @@ using MeetupDemo.MobileApp;
 using ReactiveUI;
 using Android.Content;
 using System.Diagnostics;
+using System.Reactive.Disposables;
 
 namespace MeetupDemo.Droid
 {
@@ -27,9 +28,9 @@ namespace MeetupDemo.Droid
             set { this.RaiseAndSetIfChanged (ref this.queryText, value); }
         }
 
-        protected override void CreateViewModel ()
+        protected override SearchCitizenViewModel CreateViewModel ()
         {
-            this.ViewModel = new SearchCitizenViewModel ();
+            return new SearchCitizenViewModel ();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)

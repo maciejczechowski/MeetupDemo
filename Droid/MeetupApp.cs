@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Android.App;
 using Android.Runtime;
 using MeetupDemo.MobileApp;
@@ -19,11 +20,22 @@ namespace MeetupDemo.Droid
             base.OnCreate ();
 
             suspendHelper = new AutoSuspendHelper (this);
-            var bootstrapper = new MeetupAppBootstrapper (() => new SearchCitizenViewModel());
+            var bootstrapper = new MeetupAppBootstrapper ();
 
             RxApp.SuspensionHost.CreateNewAppState = () => bootstrapper;
             RxApp.SuspensionHost.SetupDefaultSuspendResume ();
-
+            RxApp.SuspensionHost.IsResuming.Subscribe (_ => {
+                Debug.WriteLine ("IsResuming");
+            });
+            RxApp.SuspensionHost.IsLaunchingNew.Subscribe (_ => {
+                Debug.WriteLine ("IsResuming");
+            });
+            RxApp.SuspensionHost.IsUnpausing.Subscribe (_ => {
+                Debug.WriteLine ("IsResuming");
+            });
+            RxApp.SuspensionHost.ShouldPersistState.Subscribe (_ => {
+                Debug.WriteLine ("IsResuming");
+            });
             this.ConfigureViews ();
 
             //bootstrapper.Initialize ();

@@ -3,18 +3,17 @@ using Splat;
 using ReactiveUI;
 using MeetupDemo.MobileApp;
 using MeetupDemo.MobileApp.ViewModels;
-namespace MeetupDemo.Droid
+
+namespace MeetupDemo.MobileApp
 {
     public class MeetupAppBootstrapper : ReactiveObject //, IScreen
     {
-        private readonly Func<IRoutableViewModel> getFirstViewModel;
-
         //public RoutingState Router {
         //    get;
         //    protected set;
         //}
 
-        public MeetupAppBootstrapper (Func<IRoutableViewModel> getFirstViewModelDelegate)
+        public MeetupAppBootstrapper ()
         {
             //this.Router = new RoutingState ();
 
@@ -22,9 +21,7 @@ namespace MeetupDemo.Droid
 
             this.RegisterViews ();
 
-            var searchCitizenViewModel = new SearchCitizenViewModel ();
-
-            this.getFirstViewModel = getFirstViewModelDelegate;
+            //var searchCitizenViewModel = new SearchCitizenViewModel ();
 
             // go to first view
             // does not work

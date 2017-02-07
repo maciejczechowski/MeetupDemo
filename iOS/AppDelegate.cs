@@ -1,5 +1,7 @@
 ﻿using Foundation;
 using UIKit;
+using ReactiveUI;
+using MeetupDemo.MobileApp;
 
 namespace MeetupDemo.iOS
 {
@@ -8,6 +10,8 @@ namespace MeetupDemo.iOS
 	[Register("AppDelegate")]
 	public class AppDelegate : UIApplicationDelegate
 	{
+        AutoSuspendHelper suspendHelper;
+
 		// class-level declarations
 
 		public override UIWindow Window
@@ -16,10 +20,17 @@ namespace MeetupDemo.iOS
 			set;
 		}
 
-		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
+        public AppDelegate () : base()
+        {
+            RxApp.SuspensionHost.CreateNewAppState = () => new MeetupAppBootstrapper ();
+        }
+
+        public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
+
+            suspendHelper = new AutoSuspendHelper (this);
 
             Window = new UIWindow (UIScreen.MainScreen.Bounds);
 
@@ -40,8 +51,9 @@ namespace MeetupDemo.iOS
 
 		public override void DidEnterBackground(UIApplication application)
 		{
-			// Use this method to release shared resources, save user data, invalidate timers and store the application state.
-			// If your application supports background exection this method is called instead of WillTerminate when the user quits.
+            // Use this method to release shared resources, save user data, invalidate timers and store the application state.
+            // If your application supports background exection this method is called instead of WillTerminate when the user quits.
+            suspendHelper.DidEnterBackground(application);
 		}
 
 		public override void WillEnterForeground(UIApplication application)
@@ -52,8 +64,9 @@ namespace MeetupDemo.iOS
 
 		public override void OnActivated(UIApplication application)
 		{
-			// Restart any tasks that were paused (or not yet started) while the application was inactive. 
-			// If the application was previously in the background, optionally refresh the user interface.
+            // Restart any tasks that were paused (or not yet started) while the application was inactive. 
+            // If the application was previously in the background, optionally refresh the user interface.
+            suspendHelper.OnActivated(application);
 		}
 
 		public override void WillTerminate(UIApplication application)

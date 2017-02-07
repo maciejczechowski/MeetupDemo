@@ -16,6 +16,11 @@ namespace MeetupDemo.Droid.Activities
         {
         }
 
+        protected override MainViewModel CreateViewModel ()
+        {
+            return new MainViewModel();
+        }
+
         protected override void OnCreate (Android.OS.Bundle savedInstanceState)
         {
             base.OnCreate (savedInstanceState);

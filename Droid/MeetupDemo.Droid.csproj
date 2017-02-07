@@ -85,7 +85,6 @@
     <Compile Include="Activities\VisitDetailsActivity.cs" />
     <Compile Include="Activities\VisitListAdapter.cs" />
     <Compile Include="MeetupApp.cs" />
-    <Compile Include="MeetupAppBootstrapper.cs" />
     <Compile Include="Activities\ReactiveActivityBase.cs" />
     <Compile Include="Activities\MainActivity.cs" />
   </ItemGroup>
